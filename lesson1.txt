@@ -1,5 +1,6 @@
 use asd
 
+
 db.users.insertMany([
     {
         name: 'Alex', age: 25, gender: 'male', address: {
