@@ -1,5 +1,10 @@
 use asd
 
+show databases
+
+use admin
+
+db.getCollectionNames()
 
 db.users.insertMany([
     {
@@ -137,3 +142,5 @@ db.users.updateMany(
 db.users.find().sort({rating: -1, 'address.house': -1})
 
 
+use asd
+db.dropDatabase()
