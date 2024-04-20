@@ -423,14 +423,23 @@ db.students.aggregate([
     {
         $group: {
             _id: '$class',
-            maxScore: {$avg: '$avgScore'},
-
+            avgScore: {$avg: '$avgScore'},
             // className: '$class'
         }
     },
     {
         $sort: {
-            maxScore: -1
+            avgScore: -1
+        }
+    },
+    {
+        $limit: 1
+    },
+    {
+        $project: {
+            _id: 0,
+            className: '$_id',
+            avgScore: 1
         }
     }
 ])
